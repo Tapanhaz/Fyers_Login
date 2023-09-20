@@ -122,7 +122,7 @@ async def get_auth_code(method: Literal["mobile", "userid"]="mobile"):
                         query_params = parse_qs(urlparse(auth_url).query)
                         if 'auth_code' in query_params:
                             auth_code = query_params['auth_code'][0]
-                            print(auth_code)
+                            #print(auth_code)
                             return auth_code
                     else:
                         await display(response)
@@ -144,7 +144,8 @@ async def get_access_token(code):
             }
         )
         if response.status_code == 200:
-            print(response.json())
+            access_token = response.json().get("access_token", "")
+            return access_token
         else:
             await display(response)
 
