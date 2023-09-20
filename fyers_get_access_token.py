@@ -8,7 +8,7 @@ from typing import Literal
 from urllib.parse import urlparse, parse_qs
 
 #logging.getLogger(__name__)
-logging.basicConfig(level=logging.DEBUG)
+#logging.basicConfig(level=logging.DEBUG)
 
 '''
 ###############################################################
