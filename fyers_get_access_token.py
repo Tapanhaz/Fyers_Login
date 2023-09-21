@@ -78,8 +78,7 @@ async def display(response):
 
 async def get_auth_code(method: Literal["mobile", "userid"]="mobile"):
 
-    async with httpx.AsyncClient() as client:
-        client.headers.update(headers)
+    async with httpx.AsyncClient(headers= headers) as client:
         response = await client.post(
             routes["get_userid"] if method=="mobile" 
             else routes["login_otp"], 
